@@ -1,0 +1,18 @@
+@chat-message-input-height: 40px;
+@conversation-panel-color: #FFFFFF;
+
+.conversation {
+    background-color: @conversation-panel-color;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    @media (min-width: @screen-sm-min) {
+        left: @conversation-list-width;
+    }
+}
+
+@import 'chat-messages.less';
+@import 'chat-message-input.less';

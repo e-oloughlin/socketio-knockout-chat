@@ -1,0 +1,42 @@
+@message-bg-color-me: #0084ff;
+@message-bg-color-friend: #f2f2f2;
+
+@message-position-me: right;
+@message-position-friend: left;
+
+.chat-messages {
+    width: 100%;
+    position: absolute;
+    padding: 10px;
+    bottom: @chat-message-input-height;
+
+    min-height: 80px;
+}
+
+.chat-message {
+    .clearfix();
+    margin-bottom: 10px;
+
+    .chat-message-text {
+        margin: 0;
+        max-width: 95%;
+        border-radius: 10px;
+        padding: 5px 15px;
+        display: inline-block;
+
+        @media (min-width: @screen-md-min) {
+            max-width: 50%;
+        }
+    }
+
+    &.me .chat-message-text {
+        float: @message-position-me;
+        color: white;
+        background-color: @message-bg-color-me;
+    }
+
+    &.friend .chat-message-text {
+        float: @message-position-friend;
+        background-color: @message-bg-color-friend;
+    }
+}
