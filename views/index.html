@@ -7,54 +7,42 @@
 </head>
 <body>
 
-    <div class="conversation-list">
-        <div class="conversation-list-item">
-            Yeah well
+    <div class="sidebar-list">
+        <div class="sidebar-list-item">
+            John
         </div>
 
-        <div class="conversation-list-item">
-            Yeah well
+        <div class="sidebar-list-item">
+            Matthew
         </div>
 
-        <div class="conversation-list-item">
-            Yeah well
+        <div class="sidebar-list-item">
+            Alistair
         </div>
 
-        <div class="conversation-list-item">
-            Yeah well
+        <div class="sidebar-list-item">
+            Ryan
         </div>
 
-        <div class="conversation-list-item">
-            Yeah well
+        <div class="sidebar-list-item">
+            Eoin
         </div>
     </div>
 
     <div class="conversation">
-        <div class="chat-messages">
-
-            <div class="chat-message friend">
-                <div class="chat-message-text">
-                    I will know all later tonight when people have time to figure their shit out. But you're right, if we miss the guys Friday night, sure we can catch them for coffee the next day maybe. I would really like to see them!
-                </div>
-            </div>
-
-            <div class="chat-message me">
-                <div class="chat-message-text">
-                    Era sure lets see what happens anyway. Let me know when you know whats going on
-                </div>
-            </div>
-
-            <div class="chat-message friend">
-                <div class="chat-message-text"> Cool! </div>
-            </div>
-
-        </div>
+        <ul class="chat-messages" data-bind="foreach: messages">
+            <li class="chat-message" data-bind="css: user === 'me' ? 'me' : 'friend'">
+                <div class="chat-message-text" data-bind="text: message"></div>
+            </li>
+        </ul>
 
         <div class="chat-message-input">
-            <input type="text" class="form-control message-control-box" placeholder="type message here...">
+            <form data-bind="submit: sendMessage">
+                <input data-bind="value: newMessage, valueUpdate: 'afterkeydown'" type="text" class="form-control message-control-box" placeholder="type message here...">
+            </form>
         </div>
     </div>
 
-    <script src="js/bundle.min.js"></script>
+    <script src="js/bundle.js"></script>
 </body>
 </html>
