@@ -1,0 +1,26 @@
+doctype html
+html
+    head
+        title Chat
+        meta(name="viewport", content="width=device-width,initial-scale=1 user-scalable=0")
+        link(rel="stylesheet" type="text/css" href="css/main.min.css")
+    body
+        .sidebar-list
+            .sidebar-list-item Conversation 1
+            .sidebar-list-item Conversation 2
+            .sidebar-list-item Conversation 3
+            .sidebar-list-item Conversation 4
+            .sidebar-list-item Conversation 5
+
+        .conversation
+            ul.chat-messages(data-bind="foreach: messages")
+                li.chat-message(data-bind="css: uuid === $root.myUUID ? 'me' : 'friend'")
+                    .chat-message-text(data-bind="text: text")
+            .chat-message-input
+                form(data-bind="submit: sendMessage")
+                    input.form-control.message-control-box(data-bind="value: newMessage, valueUpdate: 'afterkeydown'" type="text" placeholder="type message here...")
+
+        .sidebar-profile
+            h3.nomargin My Profile
+
+        script(src="js/bundle.min.js")
