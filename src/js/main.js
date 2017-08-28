@@ -1,10 +1,9 @@
 var $            = require('jquery'),
     ko           = require('knockout'),
     Conversation = require('./app/view/Conversation'),
-    MessageInput = require('./app/view/MessageInput'),
-    messages     = require('./mock/data').messages;
+    MessageInput = require('./app/view/MessageInput');
 
-var conversation = new Conversation(messages);
+var conversation = new Conversation([]);
 
 var messageInput = new MessageInput();
 

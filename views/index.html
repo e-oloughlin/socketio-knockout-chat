@@ -31,8 +31,8 @@
 
     <div class="conversation">
         <ul class="chat-messages" data-bind="foreach: messages">
-            <li class="chat-message" data-bind="css: user === 'me' ? 'me' : 'friend'">
-                <div class="chat-message-text" data-bind="text: message"></div>
+            <li class="chat-message" data-bind="css: uuid === $root.myUUID ? 'me' : 'friend'">
+                <div class="chat-message-text" data-bind="text: text"></div>
             </li>
         </ul>
 
@@ -43,6 +43,6 @@
         </div>
     </div>
 
-    <script src="js/bundle.js"></script>
+    <script src="js/bundle.min.js"></script>
 </body>
 </html>
