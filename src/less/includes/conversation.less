@@ -10,7 +10,11 @@
     left: 0;
 
     @media (min-width: @screen-sm-min) {
-        left: @sidebar-list-width;
+        left: @sidebar-width;
+    }
+
+    @media (min-width: @screen-md-min) {
+        right: @sidebar-width;
     }
 }
 
