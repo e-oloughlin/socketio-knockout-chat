@@ -11,6 +11,15 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "browserify": {
+    "transform": [
+      ["coffeeify", {
+        "extension": ".coffee",
+        "sourceMap": true
+        }
+      ]
+    ]
+  },
   "dependencies": {
     "bootstrap": "^3.3.7",
     "express": "^4.15.2",
@@ -24,6 +33,7 @@
   },
   "devDependencies": {
     "browserify": "^14.4.0",
+    "coffeeify": "^2.1.0",
     "gulp": "^3.9.1",
     "gulp-cssmin": "^0.2.0",
     "gulp-less": "^3.3.2",
